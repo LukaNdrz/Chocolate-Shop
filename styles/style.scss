@@ -127,7 +127,9 @@
 
     .main {
         .intro {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
             background-image: url(../assets/images/chocolate\ bg.jpg);
             background-size: cover;
             background-position: center;
@@ -135,20 +137,21 @@
             background-attachment: fixed;
             min-height: 150vh;
             width: 100%;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            flex-direction: column;
             padding: 0 20px;
 
             .text-container {
-                position: relative;
-                display: inline-block;
+                grid-column: 2/3;
+                grid-row: 1/2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
                 max-width: 1200px;
 
                 .intro-text {
-                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
                     bottom: 300px;
                     color: white;
                     font-family: sand;
@@ -157,37 +160,33 @@
                 }
 
                 .intro-text1 {
-                    position: relative;
                     z-index: 1;
                     color: white;
                     font-size: 125px;
                     bottom: 300px;
                     font-family: serif;
                 }
-
-                .intro-text2 {
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    bottom: 180px;
+                .intr2-sml{
+                    display: flex;
+                    align-items: flex-start;
+                    
+                    .intro-text2 {
                     z-index: 2;
-                    padding: 20px 40px;
                     color: white;
                     font-size: 125px;
                     font-family: serif;
                 }
 
                 .small {
+                    
                     font-style: italic;
-                    position: absolute;
-                    right: 61%;
-                    transform: translateX(-50%);
-                    bottom: 270px;
                     z-index: 2;
                     font-size: 35px;
                     color: white;
                     font-family: serif;
                 }
+                }
+                
             }
 
             .order {
@@ -435,11 +434,14 @@
         }
 
         .choco {
-            .choco-gif {
-                height: 85vh;
+           
+            .choco-vid{
+                display: inline-block;
+                max-height: 85vh;
                 width: 100%;
                 object-fit: cover;
             }
+            
 
             @media (max-width: 768px) {
                 .choco-gif {
