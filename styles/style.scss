@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -231,7 +232,7 @@
 
             @media (max-width: 768px) {
                 min-height: 100vh;
-                background-attachment: scroll;
+                background-attachment: fixed;
 
                 .text-container {
                     .intro-text {
@@ -290,30 +291,27 @@
 
         .middle {
             align-items: center;
+            justify-content: center;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             background-color: white;
-            max-width: 100%;
-            min-height: 100vh;
+            width: 100%;
+            height: 110vh;
             margin: 0 auto;
-            padding: 80px 200px;
+            box-sizing: border-box;
             .middle-image {
                 display: flex;
-                justify-content: center;
-
-                .woman {
-                    max-width: 450px;
-                    min-width: 280px;
-                    max-height: 600px;
-                    min-height: 410px;
-                    width: 100%;
-                    height: auto;
-                }
+                justify-content: right;
+                align-items: center;
             }
             
             .middle-content {
-                .middle-title {
+                max-width: 410px;
+
+                .mid-txt{
+
+                    .middle-title {
                     text-align: center;
                     color: gray;
                     font-size: 46px;
@@ -336,7 +334,6 @@
                     max-width: 150px;
                     justify-content: center;
                     margin: 17px auto;
-
                     transform: translateY(-15px);
                 }
 
@@ -345,7 +342,6 @@
                     font-family: sand;
                     text-align: center;
                     font-size: 12px;
-                    letter-spacing: 1px;
                     line-height: 2;
                     margin-bottom: 15px;
                 }
@@ -355,24 +351,55 @@
                     font-family: sand;
                     text-align: center;
                     font-size: 12px;
-                    letter-spacing: 1px;
                     line-height: 2;
                 }
+                }
+                
             }
 
             @media (max-width: 1024px) {
-                padding: 60px 100px;
                 gap: 30px;
+
+                .middle-image {
+                display: flex;
+                justify-content: right;
+                align-items: center;
+
+                .woman {
+                    max-width: 80%;
+                    max-height: 80%;
+                }
+            }
+            .middle-content{
+                max-width: 350px;
+
+                
+            }
+
+
             }
 
             @media (max-width: 768px) {
-                grid-template-columns: 1fr;
-                padding: 60px 50px;
-                min-height: auto;
+                height: 90vh;
+                padding: 20px;
+                gap: 5px;
+                .middle-image {
+                    
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-                
+                .woman {
+                    width: 80%;
+
+                }
+            }
+
                 .middle-content {
-                    .middle-title {
+                    
+
+                    .mid-txt{
+                        .middle-title {
                         font-size: 38px;
                     }
 
@@ -384,16 +411,20 @@
                     .middle-p,
                     .middle-p2 {
                         font-size: 11px;
-                        line-height: 1.8;
+                        line-height: 1.5;
+
                     }
+                    }
+                    
                 }
             }
 
             @media (max-width: 480px) {
                 grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
                 padding: 20px;
-                min-height: auto;
-              
+                height: auto;
+
 
                 .middle-image {
                     .woman {
@@ -402,7 +433,18 @@
                 }
 
                 .middle-content {
-                    .middle-title {
+                    display: grid;
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    justify-content: center;
+                    max-width: 100%;
+
+
+                    .mid-txt{
+                        display: flex;
+                        flex-direction: column;
+
+                         .middle-title {
                         font-size: 28px;
                     }
 
@@ -420,6 +462,8 @@
                         font-size: 10px;
                         letter-spacing: 1px;
                     }
+                    }
+                   
                 }
             }
         }
@@ -549,12 +593,16 @@
 
             @media (max-width: 1024px) {
                 padding: 60px 50px;
+                gap: 50px;
             }
 
             @media (max-width: 768px) {
+                display: flex;
+                justify-content: center;
                 grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
                 padding: 60px 50px;
-                min-height: auto;
+                gap: 50px;
 
                 .mid2-txt {
                     .mid-h2 {
@@ -575,11 +623,16 @@
                         font-size: 13px;
                     }
                 }
+                .mid2-img{
+                    grid-row:2/3;
+                    grid-column: 1/2;
+                }
 
             }
 
             @media (max-width: 480px) {
                 padding: 40px 20px;
+                gap: 50px;
 
                 .mid2-txt {
                     
@@ -608,7 +661,6 @@
                 }
 
                 .mid2-img {
-                    display: block;
                     row-gap: 15px;
                     column-gap: 15px;
 
@@ -649,7 +701,7 @@
 
             @media (max-width: 768px) {
                 height: 60vh;
-                background-attachment: scroll;
+                background-attachment: fixed;
 
                 .choco2-p {
                     font-size: 24px;
@@ -679,23 +731,23 @@
             grid-template-columns: 1fr 1fr;
             max-width: 100%;
             margin: 0 auto;
-            padding: 80px 230px;
             background-color: white;
-            min-height: 90vh;
+            height: 100vh;
+            gap: 50px;
 
             .mid3-img {
                 display: flex;
                 gap: 25px;
                 justify-content: center;
-                flex-wrap: wrap;
 
-                img {
+                .mid3-img {
                     max-width: 100%;
                     height: auto;
                 }
             }
 
             .mid3-txt {
+                max-width: 450px;
                 .mid3-h2 {
                     text-align: center;
                     color: gray;
@@ -727,28 +779,27 @@
                     color: gray;
                     font-family: sand;
                     text-align: center;
-                    font-size: 15px;
+                    font-size: 12px;
                     letter-spacing: 1px;
                     line-height: 1.5;
-                    margin-bottom: 80px;
                 }
             }
 
-            @media (max-width: 1200px) {
-                padding: 60px 100px;
+            @media (max-width: 1024px) {
                 gap: 40px;
             }
 
-            @media (max-width: 968px) {
+            @media (max-width: 768px) {
                 grid-template-columns: 1fr;
-                padding: 60px 50px;
-                min-height: auto;
+                height: auto;
 
                 .mid3-img {
                     gap: 15px;
+                    padding-top: 20px;
                 }
 
                 .mid3-txt {
+                    max-width: none;
                     .mid3-h2 {
                         font-size: 38px;
                     }
@@ -766,7 +817,11 @@
 
             @media (max-width: 480px) {
                 padding: 40px 20px;
-
+                .mid3-img{
+                   .mid3-img1{
+                    width: 50%;
+                   }
+                }
                 .mid3-txt {
                     .mid3-h2 {
                         font-size: 28px;
@@ -859,7 +914,6 @@
                 gap: 20px;
                 max-width: 800px;
                 width: 100%;
-                align-items: center;
                 justify-content: center;
 
                 .footer-input1 {
@@ -892,18 +946,19 @@
                     }
 
                     .submit {
-                        margin-top: 45px;
+                        margin-top: 33px;
                         margin-bottom: 55px;
                         min-height: 40px;
                         min-width: 300px;
                         width: 100%;
                         cursor: pointer;
+                        background-color: darkgray;
                     }
                 }
             }
         }
 
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             min-height: auto;
             padding: 40px 20px;
 
