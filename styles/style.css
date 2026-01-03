@@ -18,7 +18,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100;
   width: 100%;
   height: 60px;
   background: rgba(0, 0, 0, 0.6);
@@ -123,6 +123,29 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+.menu-container .menu-main .menu-main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-top: 30px;
+  gap: 30px;
+}
+.menu-container .menu-main .menu-main-title .menu-main-title1 {
+  padding-top: 20px;
+  font-size: 35px;
+  color: black;
+  font-family: serif;
+}
+.menu-container .menu-main .menu-main-title .menu-main-title23 .menu-main-title2 {
+  font-size: 25px;
+  color: black;
+  font-family: serif;
+}
+.menu-container .menu-main .menu-main-title .menu-main-title23 .menu-main-title3 {
+  font-size: 18px;
+  font-family: sand;
+  color: rgb(88, 88, 88);
+}
 .menu-container .menu-main .menu-item {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -130,6 +153,9 @@
   align-items: center;
   padding: 24px 0;
   border-bottom: 1px solid gray;
+}
+.menu-container .menu-main .menu-item .menu-item1 {
+  padding: 0;
 }
 .menu-container .menu-main .menu-item .menu-text .menu-h3 {
   font-size: 25px;
@@ -173,6 +199,7 @@
   text-decoration: none;
   cursor: pointer;
   z-index: 101;
+  position: absolute;
 }
 .menu-container .menu-main .menu-item .modal .modal-content {
   position: relative;
