@@ -1,0 +1,230 @@
+@font-face {
+    font-family: roboto;
+    src: url(../assets/fonts/static/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: sand;
+    src: url(../assets/fonts/Quicksand-VariableFont_wght.ttf);
+}
+@font-face{
+    font-family: serif;
+    src: url(../assets/fonts/static/SourceSerif4-Regular.ttf);
+}
+@font-face {
+    font-family: libre;
+    src: url(../assets/fonts/LibreBaskerville-Italic-VariableFont_wght.ttf);
+}
+
+
+.menu-container{
+     .menu-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(1px);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 20px;
+         
+        .menu-nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            .menu-burger{
+                max-width: 30px;
+                max-height: 30px;
+                fill: white;
+                display: none;
+            }
+           
+            .menu-menu1 {
+                color: white;
+                text-decoration: none;
+                font-family: roboto;
+                font-size: 16px;
+            }
+        }
+
+        .menu-search {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .menu-img {
+                height: 25px;
+                width: 25px;
+            }
+
+            .menu-search1 {
+                color: white;
+                text-decoration: none;
+                font-family: roboto;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            height: 50px;
+            justify-content: space-between;
+            padding: 0 15px;
+
+            .menu-nav {
+                gap: 15px;
+
+                .menu-menu1 {
+                    font-size: 14px;
+                    
+                }
+            }
+
+            .menu-search {
+                gap: 10px;
+
+                .menu-img {
+                    height: 20px;
+                    width: 20px;
+                }
+
+                .menu-search1 {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-nav {
+                gap: 10px;
+
+                .menu-burger{
+                    display: block;
+                }
+                .menu-menu1 {
+                    font-size: 12px;
+                    display: none;
+                }
+            }
+
+            .menu-search {
+                .menu-search1 {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .menu-intro{
+        background-image: url(../assets/images/chocolate\ bg.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .menu-intro-h2{
+            color: white;
+            font-size: 46px;
+            font-family: serif;
+            margin-bottom: 15px;
+            font-weight: 200;
+        }
+    }
+
+    .menu-main{
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .menu-item{
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 24px;
+
+        align-items: center;
+        padding: 24px  0;
+        border-bottom: 1px solid gray;
+        .menu-text{
+
+            .menu-h3{
+                font-size: 25px;
+                font-weight: 400;
+                margin: 0 0 8px;
+                color: rgb(86, 86, 86);
+                font-family: sand;
+        }
+            .menu-p{
+            margin: 0;
+            color: gray;
+            }
+        }
+
+        .price{
+            align-self: start;
+            font-weight: bold;
+        }
+
+        .menu-item-img{
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .modal{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+            z-index: 100;
+
+            .close{
+                color: white;
+                font-size: 32px;
+                text-decoration: none;
+                cursor: pointer;
+                z-index: 101;
+            }
+
+           .modal-content{
+            position: relative;
+            display: block;
+            margin: 5% auto;
+            }
+
+            
+        }
+        
+
+        .modal:target{
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        
+
+    }
+
+    }
+
+
+    
+
+
+
+
+}
