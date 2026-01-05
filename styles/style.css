@@ -14,6 +14,13 @@
   font-family: libre;
   src: url(../assets/fonts/LibreBaskerville-Italic-VariableFont_wght.ttf);
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 .menu-container .menu-header {
   position: fixed;
   top: 0;
@@ -119,6 +126,16 @@
   margin-bottom: 15px;
   font-weight: 200;
 }
+@media (max-width: 480px) {
+  .menu-container .menu-intro {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+  }
+  .menu-container .menu-intro .menu-intro-h2 {
+    font-size: 30px;
+  }
+}
 .menu-container .menu-main {
   max-width: 1000px;
   margin: 0 auto;
@@ -205,7 +222,6 @@
   text-decoration: none;
   cursor: pointer;
   z-index: 101;
-  position: absolute;
 }
 .menu-container .menu-main .menu-item .modal .modal-content {
   position: relative;
@@ -230,6 +246,39 @@
   font-size: 18px;
   font-family: sand;
   color: rgb(88, 88, 88);
+}
+@media (max-width: 1024px) {
+  .menu-container .menu-main {
+    max-width: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .menu-container .menu-main {
+    max-width: 480px;
+  }
+  .menu-container .menu-main .menu-item {
+    gap: 0;
+  }
+  .menu-container .menu-main .menu-item .menu-text .menu-h3 {
+    font-size: 20px;
+  }
+  .menu-container .menu-main .menu-item .menu-text .menu-p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .menu-container .menu-main {
+    max-width: 320px;
+  }
+  .menu-container .menu-main .menu-item {
+    gap: 0;
+  }
+  .menu-container .menu-main .menu-item .menu-text .menu-h3 {
+    font-size: 20px;
+  }
+  .menu-container .menu-main .menu-item .menu-text .menu-p {
+    font-size: 13px;
+  }
 }
 
 @font-face {
