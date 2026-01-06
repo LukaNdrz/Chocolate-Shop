@@ -302,6 +302,59 @@
 
     @media (max-width: 768px) {
         max-width: 480px;
+        .modal-content{
+            width: 70%;
+        }
+
+        .menu-main-title{
+            align-items: center;
+            
+            .menu-main-title1{
+                justify-content: center;
+            }
+            .menu-main-title23{
+                display: flex;
+                flex-direction: column;
+                
+                .menu-main-title2{
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .menu-main-title3{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                }
+            }
+
+        }
+        .menu-main-title45{
+            .menu-main-title4{
+                display: flex;
+                justify-content: center;
+            }
+            .menu-main-title5{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+
+        .menu-item{
+
+            .menu-text{
+                .menu-h3{
+                   font-size: 20px;
+                   text-align: center;
+            }
+            .menu-p{
+                font-size: 13px;
+                text-align: center;
+            }
+            }
+        }
     }
 
     @media (max-width: 480px) {
@@ -317,14 +370,29 @@
             .menu-main-title23{
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                
                 .menu-main-title2{
-
+                    display: flex;
+                    justify-content: center;
                 }
 
                 .menu-main-title3{
-
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
                 }
+            }
+
+        }
+        .menu-main-title45{
+            .menu-main-title4{
+                display: flex;
+                justify-content: center;
+            }
+            .menu-main-title5{
+                display: flex;
+                justify-content: center;
+                text-align: center;
             }
         }
 
@@ -333,10 +401,12 @@
 
             .menu-text{
                 .menu-h3{
-            font-size: 20px;
+                   font-size: 20px;
+                   text-align: center;
             }
             .menu-p{
                 font-size: 13px;
+                text-align: center;
             }
             }
         }
@@ -360,4 +430,3 @@
 
 
 
-}
