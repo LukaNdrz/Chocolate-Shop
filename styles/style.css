@@ -226,6 +226,43 @@
   margin: 0 auto;
   height: 300vh;
 }
+.order-container .order-main2 .cards .truffels-desserts {
+  font-size: 17px;
+  font-family: sand;
+}
+.order-container .order-main2 .cards .truffels-desserts .cards-truffels {
+  text-decoration: none;
+  color: rgb(53, 53, 53);
+}
+.order-container .order-main2 .cards .truffels-desserts .cards-desserts {
+  text-decoration: none;
+  color: rgb(53, 53, 53);
+}
+.order-container .order-main2 .cards .truffel-menu .truffel-menu-h2 {
+  color: rgb(82, 82, 82);
+  font-size: 35px;
+  font-family: serif;
+  font-weight: 270;
+  padding-bottom: 30px;
+}
+.order-container .order-main2 .cards .truffel-line {
+  border-top: 1px solid gray;
+  padding-bottom: 30px;
+  width: 1135px;
+}
+.order-container .order-main2 .cards .cardsText {
+  padding-bottom: 30px;
+}
+.order-container .order-main2 .cards .cardsText .cardsText-h2 {
+  color: black;
+  font-size: 30px;
+  font-family: serif;
+  font-weight: 200;
+}
+.order-container .order-main2 .cards .cardsText .cardsText-p {
+  color: black;
+  font-family: sand;
+}
 .order-container .order-main2 .cards .truffel-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -262,6 +299,26 @@
   color: rgb(30, 30, 30);
   padding: 0 1.5rem;
 }
+.order-container .order-main2 .cards .truffel-cards .truffel-card1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.order-container .order-main2 .cards .dessert-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.order-container .order-main2 .cards .dessert-cards .dessert-card1 {
+  border: 1px solid gray;
+  text-align: center;
+  background: white;
+  max-width: 250px;
+  background-color: rgb(238, 238, 238);
+  padding: 0 0 2rem 0;
+}
+
 @font-face {
   font-family: roboto;
   src: url(../assets/fonts/static/Roboto-Regular.ttf);

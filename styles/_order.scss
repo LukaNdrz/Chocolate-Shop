@@ -264,8 +264,51 @@
 
         .cards{
             .truffels-desserts{
+                
+                font-size: 17px;
+                font-family:sand;
+
+
+                .cards-truffels{
+                    text-decoration: none;
+                    color: rgb(53, 53, 53);
+                }
+                .cards-desserts{
+                    text-decoration: none;
+                    color: rgb(53, 53, 53);
+                }
 
             }
+
+            .truffel-menu{
+                .truffel-menu-h2{
+                    color: rgb(82, 82, 82);
+                    font-size: 35px;
+                    font-family: serif;
+                    font-weight: 270;
+                    padding-bottom: 30px;
+                }
+            }
+            .truffel-line{
+                border-top: 1px solid gray;
+                padding-bottom: 30px;
+                width: 1135px;
+            }
+
+            .cardsText{
+                padding-bottom: 30px;
+                .cardsText-h2{
+                    color: black;
+                    font-size: 30px;
+                    font-family: serif;
+                    font-weight: 200;
+                }
+                .cardsText-p{
+                    color: black;
+                    font-family: sand;
+                }
+            }
+           
 
             .truffel-cards{
             display: grid;
@@ -274,6 +317,7 @@
             max-width: 1150px;
             margin: 0 auto;
 
+            
             .truffel-card1{
                 border: 1px solid gray;
                 text-align: center;
@@ -304,17 +348,21 @@
 
 
                 }
-                .truffel-price{
-                    
-                }
+                
+
+                
 
             }
+            .truffel-card1:hover{
+                    transform: scale(1.05);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
         }
-        .dessert-cards{
 
-        }
+       
+       
 
-        }
+        
 
         
     }
