@@ -131,252 +131,423 @@
 
 
 
-    .order-intro{
-        width: 100%;
-        height: 40vh;
-        background-image: url(../assets/images/chocolate\ bg4.avif);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+  .order-intro {
+    width: 100%;
+    height: 40vh;
+    min-height: 250px;
+    background-image: url(../assets/images/chocolate\ bg4.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (max-width: 768px) {
+        height: 30vh;
+        min-height: 200px;
     }
-    .order-main{
-        max-width: 1150px;
-        margin: 0 auto;
-        .order-title{
-            display: flex;
-            flex-direction: column;
-            row-gap: 20px;
-            .order-h2{
-                margin-top: 30px;
-                color: rgb(82, 82, 82);
-                font-size: 50px;
-                font-family: serif;
-                font-weight: 270;
+
+    @media screen and (max-width: 480px) {
+        height: 25vh;
+        min-height: 180px;
+    }
+}
+
+.order-main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 15px;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0 10px;
+    }
+
+    .order-title {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @media screen and (max-width: 480px) {
+            row-gap: 15px;
+        }
+
+        .order-h2 {
+            margin-top: 30px;
+            color: rgb(82, 82, 82);
+            font-size: clamp(32px, 5vw, 50px);
+            font-family: serif;
+            font-weight: 270;
+
+            @media screen and (max-width: 768px) {
+                margin-top: 20px;
             }
-            .order-p{
+
+            @media screen and (max-width: 480px) {
+                margin-top: 15px;
+            }
+        }
+
+        .order-p {
+            color: black;
+            font-family: sand;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        .green {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid lightgray;
+            width: 170px;
+            max-width: 100%;
+            height: 40px;
+            gap: 10px;
+            border-radius: 20px;
+
+            @media screen and (max-width: 480px) {
+                width: 150px;
+            }
+
+            .green1 {
+                background-color: rgb(0, 174, 0);
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+            }
+
+            .green-p {
                 color: black;
                 font-family: sand;
             }
+        }
 
+        .pickup-delivery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
 
+            @media screen and (max-width: 480px) {
+                flex-direction: column;
+                width: 100%;
+            }
 
-            .green{
+            .order-pickup,
+            .order-delivery {
                 display: flex;
+                text-decoration: none;
+                color: black;
+                font-family: sand;
+                border: 1px solid black;
+                background-color: rgb(238, 238, 238);
+                width: 170px;
+                height: 50px;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid lightgray;
-                width: 170px;
-                height: 40px;
+                transition: background-color 0.3s ease;
+
+                @media screen and (max-width: 768px) {
+                    flex: 1;
+                    min-width: 150px;
+                }
+
+                @media screen and (max-width: 480px) {
+                    width: 100%;
+                }
+
+                &:hover {
+                    background-color: lightgray;
+                }
+            }
+        }
+
+        .time-location {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            @media screen and (max-width: 480px) {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .time {
+                display: flex;
+                align-items: center;
                 gap: 10px;
-                border-radius: 20px;
-                .green1{
-                    
-                    background-color: rgb(0, 174, 0);
-                    border-radius: 50%;
-                    width: 8px;
-                    height: 8px;
-                }
-                .green-p{
+
+                .time-p,
+                .time-a {
                     color: black;
                     font-family: sand;
-
+                    font-size: clamp(14px, 2vw, 16px);
                 }
             }
 
-            .pickup-delivery{ 
+            .location {
                 display: flex;
-                .order-pickup{
-                    display: flex;
-                    text-decoration: none;
+                align-items: center;
+                gap: 10px;
+
+                .location-p {
                     color: black;
                     font-family: sand;
-                    border: 1px solid black;
-                    background-color: rgb(238, 238, 238);
-                    width: 170px;
-                    height: 50px;
-                    align-items: center;
-                    justify-content: center;
-
-                }
-                .order-delivery{
-                    display: flex;
-                    text-decoration: none;
-                    color: black;
-                    font-family: sand;
-                    border: 1px solid black;
-                    background-color: rgb(238, 238, 238);
-                    width: 170px;
-                    height: 50px;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .order-pickup:hover{
-                    background-color: lightgray;
-                }
-                .order-delivery:hover{
-                    background-color: lightgray;
+                    font-size: clamp(14px, 2vw, 16px);
                 }
 
-            }
-            .time-location{
-                display: flex;
-                gap: 20px;
-                .time{
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-
-                    .time-p{
-                        color: black;
-                        font-family: sand;
-                    }
-                    .time-a{
-                        color: black;
-                        font-family: sand;
-                    }
-                }
-                .location{
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    .location-p{
-                        color: black;
-                        font-family: sand;
-                    }
-                    .loc{
-                        width: 24px;
-                    }
+                .loc {
+                    width: 24px;
+                    height: auto;
                 }
             }
-           
-
-
-
         }
     }
-    .order-main2{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1150px;
-        margin: 0 auto;
-        height: 300vh;
+}
 
-        .cards{
-            .truffels-desserts{
-                
-                font-size: 17px;
-                font-family:sand;
+.order-main2 {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 150vh;
 
+    @media screen and (max-width: 768px) {
+        padding: 0 15px;
+    }
 
-                .cards-truffels{
-                    text-decoration: none;
-                    color: rgb(53, 53, 53);
-                }
-                .cards-desserts{
-                    text-decoration: none;
-                    color: rgb(53, 53, 53);
-                }
+    @media screen and (max-width: 480px) {
+        padding: 0 10px;
+    }
 
+    @media screen and (max-width: 360px) {
+        padding: 0 8px;
+    }
+
+    .cards {
+        width: 100%;
+
+        .truffels-desserts {
+            height: auto;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 60px;
+            background-color: white;
+            z-index: 10;
+            padding: 12px 0;
+            flex-wrap: wrap;
+
+            @media screen and (max-width: 768px) {
+                top: 50px;
+                gap: 15px;
             }
 
-            .truffel-menu{
-                .truffel-menu-h2{
-                    color: rgb(82, 82, 82);
-                    font-size: 35px;
-                    font-family: serif;
-                    font-weight: 270;
-                    padding-bottom: 30px;
-                }
+            @media screen and (max-width: 480px) {
+                gap: 10px;
+                padding: 15px 0;
             }
-            .truffel-line{
-                border-top: 1px solid gray;
+
+            .cards-truffels,
+            .cards-desserts {
+                text-decoration: none;
+                color: rgb(53, 53, 53);
+                font-size: clamp(15px, 2vw, 17px);
+                font-family: sand;
+            }
+        }
+
+        .truffel-menu {
+            .truffel-menu-h2 {
+                color: rgb(82, 82, 82);
+                font-size: clamp(28px, 4vw, 35px);
+                font-family: serif;
+                font-weight: 270;
                 padding-bottom: 30px;
-                width: 1135px;
+            }
+        }
+
+        .truffel-line {
+            border-top: 1px solid gray;
+            padding-bottom: 30px;
+            width: 100%;
+            max-width: 1135px;
+        }
+
+        .cardsText {
+            padding-bottom: 30px;
+
+            .cardsText-h2 {
+                color: black;
+                font-size: clamp(24px, 3vw, 30px);
+                font-family: serif;
+                font-weight: 200;
+                margin-bottom: 10px;
             }
 
-            .cardsText{
-                padding-bottom: 30px;
-                .cardsText-h2{
-                    color: black;
-                    font-size: 30px;
-                    font-family: serif;
-                    font-weight: 200;
-                }
-                .cardsText-p{
-                    color: black;
-                    font-family: sand;
-                }
+            .cardsText-p {
+                color: black;
+                font-family: sand;
+                font-size: clamp(14px, 2vw, 16px);
             }
-           
+        }
 
-            .truffel-cards{
+        .truffel-cards {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            max-width: 1150px;
-            margin: 0 auto;
+            width: 100%;
+            margin: 0 auto 3rem;
 
-            
-            .truffel-card1{
+            @media screen and (max-width: 768px) {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            @media screen and (max-width: 480px) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .truffel-card1 {
                 border: 1px solid gray;
                 text-align: center;
                 background: white;
-                max-width: 250px;
+                width: 100%;
+                max-width: 100%;
                 background-color: rgb(238, 238, 238);
                 padding: 0 0 2rem 0;
-
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
-                .truffel-img{
-                    max-width: 245px;
+                cursor: pointer;
+
+                .truffel-img {
+                    width: 100%;
                     height: 170px;
                     object-fit: cover;
                     margin-bottom: 1rem;
+
+                    @media screen and (max-width: 480px) {
+                        height: 200px;
+                    }
+
+                    @media screen and (max-width: 360px) {
+                        height: 180px;
+                    }
                 }
-                .tc-h3{
-                    font-size: 17px;
-                    font-family:serif;
+
+                .tc-h3 {
+                    font-size: clamp(16px, 2vw, 17px);
+                    font-family: serif;
                     color: rgb(53, 53, 53);
                     font-weight: 300;
                     padding: 0 1.5rem;
+                    margin-bottom: 0.5rem;
                 }
-                .tc-p{
-                    font-size: 13px;
+
+                .tc-p {
+                    font-size: clamp(12px, 1.5vw, 13px);
                     font-family: sand;
                     color: rgb(30, 30, 30);
                     padding: 0 1.5rem;
-
-
                 }
-                
 
-                
-
-            }
-            .truffel-card1:hover{
+                &:hover {
                     transform: scale(1.05);
                     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                }
             }
         }
 
-       
-       
+        .cardstext1 {
+            padding-top: 30px;
+            padding-bottom: 30px;
 
-        
+            .cardstext1-h2 {
+                color: black;
+                font-size: clamp(24px, 3vw, 30px);
+                font-family: serif;
+                font-weight: 200;
+                margin-bottom: 10px;
+            }
 
-        
+            .cardstext1-p {
+                color: black;
+                font-family: sand;
+                font-size: clamp(14px, 2vw, 16px);
+            }
+        }
+
+        .dessert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            margin: 0 auto 3rem;
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            @media screen and (max-width: 480px) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .dessert-card1 {
+                border: 1px solid gray;
+                text-align: center;
+                background: white;
+                width: 100%;
+                max-width: 100%;
+                background-color: rgb(238, 238, 238);
+                padding: 0 0 2rem 0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+
+                .dessert-img {
+                    width: 100%;
+                    height: 170px;
+                    object-fit: cover;
+                    margin-bottom: 1rem;
+
+                    @media screen and (max-width: 480px) {
+                        height: 200px;
+                    }
+
+                    @media screen and (max-width: 360px) {
+                        height: 180px;
+                    }
+                }
+
+                .dc-h3 {
+                    font-size: clamp(16px, 2vw, 17px);
+                    font-family: serif;
+                    color: rgb(53, 53, 53);
+                    font-weight: 300;
+                    padding: 0 1.5rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .dc-p {
+                    font-size: clamp(12px, 1.5vw, 13px);
+                    font-family: sand;
+                    color: rgb(30, 30, 30);
+                    padding: 0 1.5rem;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 }
+
+
+

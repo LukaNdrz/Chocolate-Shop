@@ -111,30 +111,70 @@
 .order-container .order-intro {
   width: 100%;
   height: 40vh;
+  min-height: 250px;
   background-image: url(../assets/images/chocolate\ bg4.avif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (max-width: 768px) {
+  .order-container .order-intro {
+    height: 30vh;
+    min-height: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-intro {
+    height: 25vh;
+    min-height: 180px;
+  }
+}
 .order-container .order-main {
   max-width: 1150px;
   margin: 0 auto;
+  padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .order-container .order-main {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main {
+    padding: 0 10px;
+  }
 }
 .order-container .order-main .order-title {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
+@media screen and (max-width: 480px) {
+  .order-container .order-main .order-title {
+    row-gap: 15px;
+  }
+}
 .order-container .order-main .order-title .order-h2 {
   margin-top: 30px;
   color: rgb(82, 82, 82);
-  font-size: 50px;
+  font-size: clamp(32px, 5vw, 50px);
   font-family: serif;
   font-weight: 270;
+}
+@media screen and (max-width: 768px) {
+  .order-container .order-main .order-title .order-h2 {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main .order-title .order-h2 {
+    margin-top: 15px;
+  }
 }
 .order-container .order-main .order-title .order-p {
   color: black;
   font-family: sand;
+  font-size: clamp(14px, 2vw, 16px);
 }
 .order-container .order-main .order-title .green {
   display: flex;
@@ -142,9 +182,15 @@
   justify-content: center;
   border: 1px solid lightgray;
   width: 170px;
+  max-width: 100%;
   height: 40px;
   gap: 10px;
   border-radius: 20px;
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main .order-title .green {
+    width: 150px;
+  }
 }
 .order-container .order-main .order-title .green .green1 {
   background-color: rgb(0, 174, 0);
@@ -158,19 +204,16 @@
 }
 .order-container .order-main .order-title .pickup-delivery {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.order-container .order-main .order-title .pickup-delivery .order-pickup {
-  display: flex;
-  text-decoration: none;
-  color: black;
-  font-family: sand;
-  border: 1px solid black;
-  background-color: rgb(238, 238, 238);
-  width: 170px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 480px) {
+  .order-container .order-main .order-title .pickup-delivery {
+    flex-direction: column;
+    width: 100%;
+  }
 }
+.order-container .order-main .order-title .pickup-delivery .order-pickup,
 .order-container .order-main .order-title .pickup-delivery .order-delivery {
   display: flex;
   text-decoration: none;
@@ -182,29 +225,46 @@
   height: 50px;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
 }
-.order-container .order-main .order-title .pickup-delivery .order-pickup:hover {
-  background-color: lightgray;
+@media screen and (max-width: 768px) {
+  .order-container .order-main .order-title .pickup-delivery .order-pickup,
+  .order-container .order-main .order-title .pickup-delivery .order-delivery {
+    flex: 1;
+    min-width: 150px;
+  }
 }
+@media screen and (max-width: 480px) {
+  .order-container .order-main .order-title .pickup-delivery .order-pickup,
+  .order-container .order-main .order-title .pickup-delivery .order-delivery {
+    width: 100%;
+  }
+}
+.order-container .order-main .order-title .pickup-delivery .order-pickup:hover,
 .order-container .order-main .order-title .pickup-delivery .order-delivery:hover {
   background-color: lightgray;
 }
 .order-container .order-main .order-title .time-location {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main .order-title .time-location {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 .order-container .order-main .order-title .time-location .time {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.order-container .order-main .order-title .time-location .time .time-p {
-  color: black;
-  font-family: sand;
-}
+.order-container .order-main .order-title .time-location .time .time-p,
 .order-container .order-main .order-title .time-location .time .time-a {
   color: black;
   font-family: sand;
+  font-size: clamp(14px, 2vw, 16px);
 }
 .order-container .order-main .order-title .time-location .location {
   display: flex;
@@ -214,33 +274,71 @@
 .order-container .order-main .order-title .time-location .location .location-p {
   color: black;
   font-family: sand;
+  font-size: clamp(14px, 2vw, 16px);
 }
 .order-container .order-main .order-title .time-location .location .loc {
   width: 24px;
+  height: auto;
 }
 .order-container .order-main2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
   max-width: 1150px;
   margin: 0 auto;
-  height: 300vh;
+  padding: 0 20px;
+  min-height: 150vh;
+}
+@media screen and (max-width: 768px) {
+  .order-container .order-main2 {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main2 {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .order-container .order-main2 {
+    padding: 0 8px;
+  }
+}
+.order-container .order-main2 .cards {
+  width: 100%;
 }
 .order-container .order-main2 .cards .truffels-desserts {
-  font-size: 17px;
-  font-family: sand;
+  height: auto;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 60px;
+  background-color: white;
+  z-index: 10;
+  padding: 12px 0;
+  flex-wrap: wrap;
 }
-.order-container .order-main2 .cards .truffels-desserts .cards-truffels {
-  text-decoration: none;
-  color: rgb(53, 53, 53);
+@media screen and (max-width: 768px) {
+  .order-container .order-main2 .cards .truffels-desserts {
+    top: 50px;
+    gap: 15px;
+  }
 }
+@media screen and (max-width: 480px) {
+  .order-container .order-main2 .cards .truffels-desserts {
+    gap: 10px;
+    padding: 15px 0;
+  }
+}
+.order-container .order-main2 .cards .truffels-desserts .cards-truffels,
 .order-container .order-main2 .cards .truffels-desserts .cards-desserts {
   text-decoration: none;
   color: rgb(53, 53, 53);
+  font-size: clamp(15px, 2vw, 17px);
+  font-family: sand;
 }
 .order-container .order-main2 .cards .truffel-menu .truffel-menu-h2 {
   color: rgb(82, 82, 82);
-  font-size: 35px;
+  font-size: clamp(28px, 4vw, 35px);
   font-family: serif;
   font-weight: 270;
   padding-bottom: 30px;
@@ -248,53 +346,81 @@
 .order-container .order-main2 .cards .truffel-line {
   border-top: 1px solid gray;
   padding-bottom: 30px;
-  width: 1135px;
+  width: 100%;
+  max-width: 1135px;
 }
 .order-container .order-main2 .cards .cardsText {
   padding-bottom: 30px;
 }
 .order-container .order-main2 .cards .cardsText .cardsText-h2 {
   color: black;
-  font-size: 30px;
+  font-size: clamp(24px, 3vw, 30px);
   font-family: serif;
   font-weight: 200;
+  margin-bottom: 10px;
 }
 .order-container .order-main2 .cards .cardsText .cardsText-p {
   color: black;
   font-family: sand;
+  font-size: clamp(14px, 2vw, 16px);
 }
 .order-container .order-main2 .cards .truffel-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1150px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 auto 3rem;
+}
+@media screen and (max-width: 768px) {
+  .order-container .order-main2 .cards .truffel-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main2 .cards .truffel-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 .order-container .order-main2 .cards .truffel-cards .truffel-card1 {
   border: 1px solid gray;
   text-align: center;
   background: white;
-  max-width: 250px;
+  width: 100%;
+  max-width: 100%;
   background-color: rgb(238, 238, 238);
   padding: 0 0 2rem 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .order-container .order-main2 .cards .truffel-cards .truffel-card1 .truffel-img {
-  max-width: 245px;
+  width: 100%;
   height: 170px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 480px) {
+  .order-container .order-main2 .cards .truffel-cards .truffel-card1 .truffel-img {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .order-container .order-main2 .cards .truffel-cards .truffel-card1 .truffel-img {
+    height: 180px;
+  }
+}
 .order-container .order-main2 .cards .truffel-cards .truffel-card1 .tc-h3 {
-  font-size: 17px;
+  font-size: clamp(16px, 2vw, 17px);
   font-family: serif;
   color: rgb(53, 53, 53);
   font-weight: 300;
   padding: 0 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .order-container .order-main2 .cards .truffel-cards .truffel-card1 .tc-p {
-  font-size: 13px;
+  font-size: clamp(12px, 1.5vw, 13px);
   font-family: sand;
   color: rgb(30, 30, 30);
   padding: 0 1.5rem;
@@ -303,20 +429,86 @@
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+.order-container .order-main2 .cards .cardstext1 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.order-container .order-main2 .cards .cardstext1 .cardstext1-h2 {
+  color: black;
+  font-size: clamp(24px, 3vw, 30px);
+  font-family: serif;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+.order-container .order-main2 .cards .cardstext1 .cardstext1-p {
+  color: black;
+  font-family: sand;
+  font-size: clamp(14px, 2vw, 16px);
+}
 .order-container .order-main2 .cards .dessert-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1150px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 auto 3rem;
+}
+@media screen and (max-width: 768px) {
+  .order-container .order-main2 .cards .dessert-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main2 .cards .dessert-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 .order-container .order-main2 .cards .dessert-cards .dessert-card1 {
   border: 1px solid gray;
   text-align: center;
   background: white;
-  max-width: 250px;
+  width: 100%;
+  max-width: 100%;
   background-color: rgb(238, 238, 238);
   padding: 0 0 2rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.order-container .order-main2 .cards .dessert-cards .dessert-card1 .dessert-img {
+  width: 100%;
+  height: 170px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .order-container .order-main2 .cards .dessert-cards .dessert-card1 .dessert-img {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .order-container .order-main2 .cards .dessert-cards .dessert-card1 .dessert-img {
+    height: 180px;
+  }
+}
+.order-container .order-main2 .cards .dessert-cards .dessert-card1 .dc-h3 {
+  font-size: clamp(16px, 2vw, 17px);
+  font-family: serif;
+  color: rgb(53, 53, 53);
+  font-weight: 300;
+  padding: 0 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.order-container .order-main2 .cards .dessert-cards .dessert-card1 .dc-p {
+  font-size: clamp(12px, 1.5vw, 13px);
+  font-family: sand;
+  color: rgb(30, 30, 30);
+  padding: 0 1.5rem;
+}
+.order-container .order-main2 .cards .dessert-cards .dessert-card1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 @font-face {
@@ -660,6 +852,216 @@
     font-size: 13px;
     text-align: center;
   }
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(../assets/fonts/static/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: sand;
+  src: url(../assets/fonts/Quicksand-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: serif;
+  src: url(../assets/fonts/static/SourceSerif4-Regular.ttf);
+}
+@font-face {
+  font-family: libre;
+  src: url(../assets/fonts/LibreBaskerville-Italic-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.calendar-container .calendar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+.calendar-container .calendar-header .calendar-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.calendar-container .calendar-header .calendar-nav .calendar-burger {
+  max-width: 30px;
+  max-height: 30px;
+  fill: white;
+  display: none;
+}
+.calendar-container .calendar-header .calendar-nav .calendar-menu1 {
+  color: white;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 16px;
+}
+.calendar-container .calendar-header .calendar-search {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.calendar-container .calendar-header .calendar-search .calendar-img {
+  height: 25px;
+  width: 25px;
+}
+.calendar-container .calendar-header .calendar-search .calendar-search1 {
+  color: white;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .calendar-container .calendar-header {
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  .calendar-container .calendar-header .calendar-nav {
+    gap: 15px;
+  }
+  .calendar-container .calendar-header .calendar-nav .calendar-menu1 {
+    font-size: 14px;
+  }
+  .calendar-container .calendar-header .calendar-search {
+    gap: 10px;
+  }
+  .calendar-container .calendar-header .calendar-search .calendar-img {
+    height: 20px;
+    width: 20px;
+  }
+  .calendar-container .calendar-header .calendar-search .calendar-search1 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .calendar-container .calendar-header .calendar-nav {
+    gap: 10px;
+  }
+  .calendar-container .calendar-header .calendar-nav .calendar-burger {
+    display: block;
+  }
+  .calendar-container .calendar-header .calendar-nav .calendar-menu1 {
+    font-size: 12px;
+    display: none;
+  }
+  .calendar-container .calendar-header .calendar-search .calendar-search1 {
+    font-size: 12px;
+  }
+}
+.calendar-container .calendar-intro {
+  width: 100%;
+  height: 40vh;
+  min-height: 250px;
+  background-image: url(../assets/images/chocolate\ bg4.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .calendar-container .calendar-intro {
+    height: 30vh;
+    min-height: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .calendar-container .calendar-intro {
+    height: 25vh;
+    min-height: 180px;
+  }
+}
+.calendar-container .calendar-main1 {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.calendar-container .calendar {
+  width: 360px;
+  background: rgb(237, 237, 237);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.calendar-container .calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.calendar-container .calendar__header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+.calendar-container .calendar__header .nav {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+.calendar-container .calendar__header .nav:hover {
+  color: #000;
+}
+.calendar-container .calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+.calendar-container .calendar__weekdays span {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+}
+.calendar-container .calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+.calendar-container .day {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #333;
+}
+.calendar-container .day:hover {
+  background: #eef2f4;
+}
+.calendar-container .day.empty {
+  cursor: default;
+  background: transparent;
+}
+.calendar-container .day.empty:hover {
+  background: transparent;
+}
+.calendar-container .day.selected {
+  background: #af5704;
+  color: #fff;
+}
+.calendar-container .day.disabled {
+  color: #bbb;
+  cursor: not-allowed;
 }
 
 @font-face {
