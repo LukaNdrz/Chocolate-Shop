@@ -213,6 +213,7 @@
         }
         .menu-text{
 
+
             .menu-h3{
                 font-size: 25px;
                 font-weight: 400;
@@ -252,6 +253,7 @@
             z-index: 100;
 
             .close{
+                position: absolute;
                 color: white;
                 font-size: 32px;
                 text-decoration: none;
@@ -263,6 +265,7 @@
             position: relative;
             display: block;
             margin: 5% auto;
+            z-index: 100;
             }
 
             
@@ -400,8 +403,9 @@
             gap: 0;
 
             .menu-text{
+                padding-left: 10px;
                 .menu-h3{
-                   font-size: 20px;
+                   font-size: 17px;
                    text-align: center;
             }
             .menu-p{
@@ -415,10 +419,3 @@
     }
 
     }
-
-
-    
-
-
-
-

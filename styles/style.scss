@@ -424,7 +424,7 @@
                 }
             }
 
-            @media (max-width: 480px) {
+            @media (max-width: 600px) {
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr 1fr;
                 padding: 20px;
@@ -448,9 +448,10 @@
                     .mid-txt{
                         display: flex;
                         flex-direction: column;
+                        padding: 0 40px;
 
                          .middle-title {
-                        font-size: 28px;
+                        font-size: 30px;
                     }
 
                     .middle-text {
@@ -464,7 +465,7 @@
 
                     .middle-p,
                     .middle-p2 {
-                        font-size: 10px;
+                        font-size: 13px;
                         letter-spacing: 1px;
                     }
                     }
