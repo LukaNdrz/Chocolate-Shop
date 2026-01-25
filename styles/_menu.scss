@@ -228,7 +228,6 @@
         }
 
         .price{
-            align-self: start;
             font-weight: bold;
         }
 
@@ -254,11 +253,14 @@
 
             .close{
                 position: absolute;
-                color: white;
+                color: black;
                 font-size: 32px;
                 text-decoration: none;
                 cursor: pointer;
                 z-index: 101;
+                top: 11%;
+                right: 32%;
+
             }
 
            .modal-content{
@@ -400,16 +402,16 @@
         }
 
         .menu-item{
-            gap: 0;
+            gap: 10px;
 
             .menu-text{
                 padding-left: 10px;
                 .menu-h3{
-                   font-size: 17px;
+                   font-size: 14px;
                    text-align: center;
             }
             .menu-p{
-                font-size: 13px;
+                font-size: 11px;
                 text-align: center;
             }
             }
